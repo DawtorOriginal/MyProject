@@ -4,7 +4,8 @@
 
 import re
 from datetime import datetime
-from masks import get_mask_account, get_mask_card_number
+
+from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(account_info: str) -> str:
@@ -55,4 +56,3 @@ def get_date(date_string: str) -> str:
         return dt.strftime("%d.%m.%Y")
     except (ValueError, TypeError) as e:
         raise ValueError(f"Неверный формат даты: {date_string}") from e
-
